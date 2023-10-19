@@ -43,12 +43,6 @@ export default async function PostDetails({ params }) {
 }
 export const revalidate = 60;
 
-export async function getStaticParams() {
-  const posts = await getPosts();
-  return posts.map(({ node: { slug } }) => ({ params: { slug } }));
-  fallback: true;
-}
-
 // Fetch data at build time
 
 //export async function getStaticProps({ params }) {
