@@ -1,3 +1,5 @@
+"use client";
+
 import {
   PostDetail,
   Categories,
@@ -9,9 +11,11 @@ import {
 } from "../../../components";
 import { getPosts, getPostDetails } from "../../../services";
 import { AdjacentPosts } from "../../../sections";
+import { useRouter } from "next/navigation";
 
 export default async function PostDetails({ params }) {
   const post = await getPostDetails(params.slug);
+  const router = useRouter();
 
   return (
     <>
@@ -39,6 +43,12 @@ export default async function PostDetails({ params }) {
       </div>
     </>
   );
+}
+
+export async function getStaticParams() {
+  const posts = await getPosts();
+  return posts.map(({ node: { slug } }) => ({ params: { slug } }));
+  fallback: true;
 }
 
 // Fetch data at build time
