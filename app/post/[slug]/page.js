@@ -12,7 +12,6 @@ import { AdjacentPosts } from "../../../sections";
 
 export default async function PostDetails({ params }) {
   const post = await getPostDetails(params.slug);
-  const router = useRouter();
 
   return (
     <>
