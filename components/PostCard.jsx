@@ -65,13 +65,15 @@ const PostCard = ({ post }) => (
     </div>
     <div className="text-left pl-2">
       <Link href={`/post/${post.slug}`}>
-        <span className="hover:scale-105 transition-transform duration-200 ease-out inline-block xl:text-sm text-md underline font-bold rounded-full py-1 mb-2 cursor-pointer">
-          read post
-        </span>
+        <button className=" inline-block xl:text-sm text-white text-md font-bold bg-gray-500 rounded-lg max-w-max px-2 py-1 lg:px-3 lg:py-2 mb-3 cursor-pointer">
+          read more
+        </button>
       </Link>
     </div>
   </div>
 );
 
 export default PostCard;
+
+//hover:scale-105 transition-transform duration-200 ease-out
 

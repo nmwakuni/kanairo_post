@@ -22,6 +22,7 @@ export default async function CategoryPost({ params }) {
   );
 }
 
+export const revalidate = 60;
 // Fetch data at build time
 
 //export async function getCategoryPost({ params }) {

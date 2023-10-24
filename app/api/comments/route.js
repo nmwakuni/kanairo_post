@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GraphQLClient, gql } from "graphql-request";
+import { Comment } from "postcss";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -29,14 +30,14 @@ export async function POST(req, res) {
       }
     }
   `;
+  try {
+    const result = await graphQLClient.request(query, variables);
 
-  const result = await graphQLClient.request(query, {
-    name: req.json(),
-    email: req.json(),
-    comment: req.json(),
-    slug: req.json(),
-  });
-
-  return new NextResponse(JSON.stringify(Obj)).status(200).send(result);
+    return new NextResponse(
+      JSON.stringify(Comment, { status: 200 }).send(result)
+    );
+  } catch (error) {
+    console.log(error);
+  }
 }
 
