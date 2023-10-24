@@ -21,7 +21,7 @@ const Header = () => {
       <div className=" w-full flex py-1">
         <div className="sm:justify-start">
           <Link href="/">
-            <span className="bg-gradient-to-r from-orange-300 via-red-500 bg-clip-text text-transparent to-fuchsia-950 cursor-pointer font-black text-2xl md:text-4xl text-fuchsia-950">
+            <span className="bg-gradient-to-r from-orange-300 via-red-500 bg-clip-text text-transparent to-fuchsia-950 cursor-pointer font-black text-3xl md:text-4xl text-fuchsia-950">
               Kanairo Post
             </span>
           </Link>
