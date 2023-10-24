@@ -59,13 +59,13 @@ const PostCard = ({ post }) => (
       </div>
     </div>
     <div>
-      <p className="line-clamp-4 text-left xl:text-sm text-md mt-5 text-black font-normal px-2 mb-2">
+      <p className="line-clamp-4 text-left xl:text-sm text-md mt-5 text-gray-600 font-normal px-2 mb-2">
         {post.excerpt}
       </p>
     </div>
     <div className="text-left pl-2">
       <Link href={`/post/${post.slug}`}>
-        <button className=" inline-block xl:text-sm text-white text-md font-bold bg-gray-500 rounded-lg max-w-max px-2 py-1 lg:px-3 lg:py-2 mb-3 cursor-pointer">
+        <button className=" inline-block xl:text-sm text-white text-md font-bold bg-gray-800 rounded-xl max-w-max px-2 py-1 lg:px-3 lg:py-2 mb-3 cursor-pointer">
           read more
         </button>
       </Link>
